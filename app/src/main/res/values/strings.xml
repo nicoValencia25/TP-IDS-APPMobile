@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TP-IDS-AppMobile</string>
+    <string name="logo">Aterrizar.com</string>
+    <string name="login">Busque su Reserva</string>
+    <string name="hintName">Ingrese su usuario</string>
+    <string name="hintReserv">Ingrese su numero de reserva</string>
+    <string name="logbtn">Buscar</string>
+    <string name="principal">Ir a pagina principal</string>
+    <string name="misreservas">Mis reservas</string>
+    <string name="r_titulo">Mi Reserva</string>
+    <string name="r_servicios">Contratar servicios</string>
+
+</resources>
