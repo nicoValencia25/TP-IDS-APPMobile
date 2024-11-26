@@ -9,5 +9,7 @@
     <string name="misreservas">Mis reservas</string>
     <string name="r_titulo">Mi Reserva</string>
     <string name="r_servicios">Contratar servicios</string>
+    <string name="hotel_button">Habitaciones</string>
+    <string name="Hoteles">Hoteles</string>
 
 </resources>

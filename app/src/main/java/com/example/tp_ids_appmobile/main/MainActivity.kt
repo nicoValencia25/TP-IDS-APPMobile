@@ -23,10 +23,20 @@ class MainActivity : AppCompatActivity() {
 
 val btnMisReservas = findViewById<AppCompatButton>(R.id.btnMisReservas)
 btnMisReservas.setOnClickListener{navigateToReservasActivity()}
+
+        val btnHotelesIR = findViewById<AppCompatButton>(R.id.btnHotelesIR)
+        btnHotelesIR.setOnClickListener{navigateToHotelActivity()}
 }
 
 private fun navigateToReservasActivity(){
     val intent = Intent(this, BuscarReservaActivity::class.java)
     startActivity(intent)
 }
+
+    private fun navigateToHotelActivity(){
+        val intent = Intent(this, HotelActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }

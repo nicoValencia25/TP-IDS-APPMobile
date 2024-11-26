@@ -9,9 +9,11 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvbtnReservas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cvbtnHoteles"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20dp"
         app:cardCornerRadius="16dp">
@@ -23,6 +25,28 @@
             android:background="@color/green"
             android:textColor="@color/white"
             />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvbtnHoteles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cvbtnReservas"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="16dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHotelesIR"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Hoteles"
+            android:background="@color/purple_200"
+            android:textColor="@color/white"
+            />
+
 
     </androidx.cardview.widget.CardView>
 
