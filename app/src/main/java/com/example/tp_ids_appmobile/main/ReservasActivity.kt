@@ -29,6 +29,9 @@ class ReservasActivity : AppCompatActivity() {
     private lateinit var reservs: MutableList<reserv>
     private lateinit var reservasAdapter: ReservasAdapter
     private lateinit var rvMisReservas : RecyclerView
+    private lateinit var service: MutableList<service>
+    private lateinit var rvShowService: RecyclerView
+    private lateinit var serviceAdapter: ServiceAdapter
 
 
 
@@ -61,13 +64,29 @@ private fun initComponent(){
         )
     )
     rvMisReservas = findViewById(R.id.rvMisReservas)
+
+
+    service = mutableListOf(
+        service(
+            1,
+            "Transporte"
+        ),
+        service(
+            2,
+            "Desayuno"
+        )
+    )
+    rvShowService = findViewById(R.id.rvShowService)
+
 }
 
 private fun initUI(){
     reservasAdapter = ReservasAdapter(reservs)
     rvMisReservas.layoutManager = LinearLayoutManager(this)
     rvMisReservas.adapter = reservasAdapter
-
+    serviceAdapter = ServiceAdapter(service)
+    rvShowService.layoutManager = LinearLayoutManager(this)
+    rvShowService.adapter = serviceAdapter
 }
 
 

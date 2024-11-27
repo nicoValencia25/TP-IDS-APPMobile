@@ -11,5 +11,6 @@
     <string name="r_servicios">Contratar servicios</string>
     <string name="hotel_button">Habitaciones</string>
     <string name="Hoteles">Hoteles</string>
+    <string name="service">Añadir Servicios</string>
 
 </resources>
