@@ -34,8 +34,8 @@ class ReservasActivity : AppCompatActivity() {
 
     private lateinit var reserve: Reserve
     private lateinit var hotel: Hotel
-    private var hotelServices: List<Service> = emptyList()
-    private var hiredServices: List<HiredService> = emptyList()
+    private lateinit var hotelServices: List<Service>
+    private lateinit var hiredServices: List<HiredService>
 
     private lateinit var serviceAdapter: ServiceAdapter
     private lateinit var hireServiceAdapter: HireServiceAdapter
@@ -61,7 +61,7 @@ class ReservasActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             searchHotelByHabitationID(reserve.habitacionID).join()
-            //searchHotelByHabitationID(7).join()
+            // searchHotelByHabitationID(7).join()
 
             searchServicesByHotelID(hotel.hotelID).join()
             searchHiredServiceByReserveID(reserve.reservaID).join()
@@ -94,9 +94,6 @@ class ReservasActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        hotelServices = emptyList()
-        hiredServices = emptyList()
-
         CoroutineScope(Dispatchers.IO).launch {
             searchServicesByHotelID(hotel.hotelID).join()
             searchHiredServiceByReserveID(reserve.reservaID).join()
@@ -212,11 +209,17 @@ class ReservasActivity : AppCompatActivity() {
         return CoroutineScope(Dispatchers.IO).launch {
             val apiResponse = retrofit.create(ApiService::class.java).getServicesByHotelID(hotelID)
 
-            if (!apiResponse.isSuccessful) return@launch
+            if (!apiResponse.isSuccessful) {
+                hotelServices = emptyList()
+                return@launch
+            }
 
             val response = apiResponse.body()
 
-            response ?: return@launch
+            if (response == null) {
+                hotelServices = emptyList()
+                return@launch
+            }
 
             hotelServices = List(response.size) { Service(response[it]) }
         }
@@ -227,11 +230,17 @@ class ReservasActivity : AppCompatActivity() {
             val apiResponse =
                 retrofit.create(ApiService::class.java).getHiredServicesByReserveID(reserveID)
 
-            if (!apiResponse.isSuccessful) return@launch
+            if (!apiResponse.isSuccessful) {
+                hiredServices = emptyList()
+                return@launch
+            }
 
             val response = apiResponse.body()
 
-            response ?: return@launch
+            if (response == null) {
+                hiredServices = emptyList()
+                return@launch
+            }
 
             hiredServices = List(response.size) { HiredService(response[it]) }
         }
