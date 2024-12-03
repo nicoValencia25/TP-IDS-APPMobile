@@ -1,4 +1,4 @@
-package com.example.tp_ids_appmobile.main
+package com.example.tp_ids_appmobile.main.view_holder
 
 import android.view.View
 import android.widget.Button
@@ -6,16 +6,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp_ids_appmobile.R
+import com.example.tp_ids_appmobile.main.type.Hotel
 
 class HotelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val tvHotelName: TextView = view.findViewById(R.id.tvHotelName)
-    private val ivHotel: ImageView = view.findViewById(R.id.ivHotel)
     private val tvHotelDescription: TextView = view.findViewById(R.id.tvHotelDescription)
-    private val btnHotel: Button = view.findViewById(R.id.btnHotel)
 
     fun render(hotel: Hotel) {
-        tvHotelName.text = hotel.name
+        tvHotelName.text = hotel.nombre
         // TODO poner la imagen
-        tvHotelDescription.text = hotel.description
+        tvHotelDescription.text = hotel.descripcion
     }
 }

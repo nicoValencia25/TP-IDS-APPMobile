@@ -15,16 +15,13 @@
         android:theme="@style/Theme.TPIDSAppMobile"
         tools:targetApi="31">
         <activity
-            android:name=".main.HotelActivity"
+            android:name=".main.activity.HotelActivity"
             android:exported="false" />
         <activity
-            android:name=".main.ReservasActivity"
+            android:name=".main.activity.ReservasActivity"
             android:exported="false" />
         <activity
-            android:name=".main.BuscarReservaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.MainActivity"
+            android:name=".main.activity.BuscarReservaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

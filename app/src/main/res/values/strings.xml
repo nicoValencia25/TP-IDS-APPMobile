@@ -11,6 +11,16 @@
     <string name="r_servicios">Contratar servicios</string>
     <string name="hotel_button">Habitaciones</string>
     <string name="Hoteles">Hoteles</string>
-    <string name="service">Añadir Servicios</string>
+    <string name="service">Servicios contratados</string>
+
+    <string name="btn_hire_service">Contratar</string>
+    <string name="btn_remove_service">Eliminar</string>
+
+    <string name="error_reserve">Error: usuario o reserva no encontrados</string>
+    <string name="error_hire_service_date">Error: la fecha ingresada para la reserva no es valida</string>
+    <string name="error_hotels">Error: no se ha encontrado ningun hotel</string>
+
+    <string name="service_since">Reserva desde: </string>
+    <string name="service_until">Reserva hasta: </string>
 
 </resources>
